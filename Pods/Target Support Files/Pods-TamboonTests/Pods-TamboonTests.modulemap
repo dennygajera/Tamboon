@@ -1,0 +1,6 @@
+framework module Pods_TamboonTests {
+  umbrella header "Pods-TamboonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
