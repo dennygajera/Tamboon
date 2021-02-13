@@ -7,15 +7,27 @@ target 'Tamboon' do
   # Pods for Tamboon
 
     pod 'RxAlamofire'
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
-    pod 'IQKeyboardManagerSwift'
-    pod 'ReachabilitySwift'
-    pod 'MBProgressHUD', '~> 1.1.0'
+    pod 'RxSwift',    '~> 4.0', :inhibit_warnings => true
+    pod 'RxCocoa',    '~> 4.0', :inhibit_warnings => true
+    pod 'IQKeyboardManagerSwift', :inhibit_warnings => true
+    pod 'ReachabilitySwift', :inhibit_warnings => true
+    pod 'MBProgressHUD', '~> 1.1.0', :inhibit_warnings => true
+    pod 'SDWebImage', :inhibit_warnings => true
+    pod 'MFCard', :inhibit_warnings => true
+
+    post_install do |pi|
+        pi.pods_project.targets.each do |t|
+          t.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+          end
+        end
+    end
 
   target 'TamboonTests' do
     inherit! :search_paths
     # Pods for testing
+    inherit! :search_paths
+          pod 'MFCard'
   end
 
   target 'TamboonUITests' do

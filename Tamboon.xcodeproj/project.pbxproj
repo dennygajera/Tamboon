@@ -34,6 +34,16 @@
 		942A7ABA25D6412B00CC97F2 /* AppPrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A8C25D6412A00CC97F2 /* AppPrefsManager.swift */; };
 		942A7ABC25D6412B00CC97F2 /* SHSnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A9025D6412A00CC97F2 /* SHSnackBarView.swift */; };
 		942A7AE625D64F3600CC97F2 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7AE525D64F3600CC97F2 /* Connection.swift */; };
+		942A7B4325D6957100CC97F2 /* CharitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B4225D6957100CC97F2 /* CharitiesVC.swift */; };
+		942A7B4825D6959400CC97F2 /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B4725D6959400CC97F2 /* CharitiesViewModel.swift */; };
+		942A7B4D25D695EE00CC97F2 /* CharityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B4C25D695EE00CC97F2 /* CharityModel.swift */; };
+		942A7B8B25D69DE600CC97F2 /* CharityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B8A25D69DE600CC97F2 /* CharityCell.swift */; };
+		942A7BAE25D6A59600CC97F2 /* CharityPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7BAD25D6A59600CC97F2 /* CharityPaymentVC.swift */; };
+		94B5E7EC25D838D400663ACA /* CharityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5E7EB25D838D400663ACA /* CharityTest.swift */; };
+		94B5E7F125D83A3E00663ACA /* CharityPaymentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5E7F025D83A3E00663ACA /* CharityPaymentTest.swift */; };
+		94E05D0A25D79C670093D628 /* CharityPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E05CFF25D79BC20093D628 /* CharityPaymentViewModel.swift */; };
+		94E05D2F25D7C8E10093D628 /* CharityPaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E05D2E25D7C8E10093D628 /* CharityPaymentModel.swift */; };
+		94E05D3725D7D5A10093D628 /* TransactionResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E05D3625D7D5A10093D628 /* TransactionResultVC.swift */; };
 		BA16656399F130B81386A3DD /* Pods_Tamboon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D76190BB56215D44EEB5F5 /* Pods_Tamboon.framework */; };
 		EF458740A3ACE1DC8204974B /* Pods_Tamboon_TamboonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F49C5F18FC4D1BE749B3B3B /* Pods_Tamboon_TamboonUITests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +106,16 @@
 		942A7A8F25D6412A00CC97F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		942A7A9025D6412A00CC97F2 /* SHSnackBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSnackBarView.swift; sourceTree = "<group>"; };
 		942A7AE525D64F3600CC97F2 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		942A7B4225D6957100CC97F2 /* CharitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesVC.swift; sourceTree = "<group>"; };
+		942A7B4725D6959400CC97F2 /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
+		942A7B4C25D695EE00CC97F2 /* CharityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityModel.swift; sourceTree = "<group>"; };
+		942A7B8A25D69DE600CC97F2 /* CharityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityCell.swift; sourceTree = "<group>"; };
+		942A7BAD25D6A59600CC97F2 /* CharityPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentVC.swift; sourceTree = "<group>"; };
+		94B5E7EB25D838D400663ACA /* CharityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTest.swift; sourceTree = "<group>"; };
+		94B5E7F025D83A3E00663ACA /* CharityPaymentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentTest.swift; sourceTree = "<group>"; };
+		94E05CFF25D79BC20093D628 /* CharityPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentViewModel.swift; sourceTree = "<group>"; };
+		94E05D2E25D7C8E10093D628 /* CharityPaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentModel.swift; sourceTree = "<group>"; };
+		94E05D3625D7D5A10093D628 /* TransactionResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultVC.swift; sourceTree = "<group>"; };
 		9E94BB505C18043A9DEF8096 /* Pods-Tamboon-TamboonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tamboon-TamboonUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tamboon-TamboonUITests/Pods-Tamboon-TamboonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED550D12CFFD2D328D6FE3FF /* Pods_TamboonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamboonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE192224033E9F263E57BD0C /* Pods-Tamboon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tamboon.debug.xcconfig"; path = "Target Support Files/Pods-Tamboon/Pods-Tamboon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +204,8 @@
 			children = (
 				942A7A2D25D63F8100CC97F2 /* TamboonTests.swift */,
 				942A7A2F25D63F8100CC97F2 /* Info.plist */,
+				94B5E7EB25D838D400663ACA /* CharityTest.swift */,
+				94B5E7F025D83A3E00663ACA /* CharityPaymentTest.swift */,
 			);
 			path = TamboonTests;
 			sourceTree = "<group>";
@@ -210,6 +232,8 @@
 		942A7A4A25D63FCD00CC97F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				94E05D2E25D7C8E10093D628 /* CharityPaymentModel.swift */,
+				942A7B4C25D695EE00CC97F2 /* CharityModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +241,8 @@
 		942A7A4B25D63FD400CC97F2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				942A7B4725D6959400CC97F2 /* CharitiesViewModel.swift */,
+				94E05CFF25D79BC20093D628 /* CharityPaymentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -224,6 +250,10 @@
 		942A7A4C25D63FE600CC97F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				942A7B8925D69DCC00CC97F2 /* Cell */,
+				942A7B4225D6957100CC97F2 /* CharitiesVC.swift */,
+				942A7BAD25D6A59600CC97F2 /* CharityPaymentVC.swift */,
+				94E05D3625D7D5A10093D628 /* TransactionResultVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +310,14 @@
 			path = SHSnackBarView;
 			sourceTree = "<group>";
 		};
+		942A7B8925D69DCC00CC97F2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				942A7B8A25D69DE600CC97F2 /* CharityCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AD1E4690578768B9F51B6083 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +358,7 @@
 				942A7A2525D63F8100CC97F2 /* Sources */,
 				942A7A2625D63F8100CC97F2 /* Frameworks */,
 				942A7A2725D63F8100CC97F2 /* Resources */,
+				A02DA45B84FAD55B1BA04B68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,6 +564,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A02DA45B84FAD55B1BA04B68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamboonTests/Pods-TamboonTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamboonTests/Pods-TamboonTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TamboonTests/Pods-TamboonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -539,15 +595,23 @@
 				942A7A1725D63F7E00CC97F2 /* AppDelegate.swift in Sources */,
 				942A7A9D25D6412A00CC97F2 /* UIView+.swift in Sources */,
 				942A7A1925D63F7E00CC97F2 /* SceneDelegate.swift in Sources */,
+				942A7B4825D6959400CC97F2 /* CharitiesViewModel.swift in Sources */,
 				942A7AA225D6412B00CC97F2 /* Encodable+Dictionary.swift in Sources */,
+				94E05D3725D7D5A10093D628 /* TransactionResultVC.swift in Sources */,
 				942A7AB125D6412B00CC97F2 /* ServiceManager.swift in Sources */,
+				94E05D2F25D7C8E10093D628 /* CharityPaymentModel.swift in Sources */,
 				942A7AB525D6412B00CC97F2 /* Utility.swift in Sources */,
 				942A7ABA25D6412B00CC97F2 /* AppPrefsManager.swift in Sources */,
 				942A7AA825D6412B00CC97F2 /* UIColor+.swift in Sources */,
 				942A7A9225D6412A00CC97F2 /* Constant.swift in Sources */,
+				942A7B8B25D69DE600CC97F2 /* CharityCell.swift in Sources */,
 				942A7A9C25D6412A00CC97F2 /* UITextView+.swift in Sources */,
+				942A7BAE25D6A59600CC97F2 /* CharityPaymentVC.swift in Sources */,
 				942A7AA025D6412B00CC97F2 /* UIVIewController+.swift in Sources */,
+				942A7B4325D6957100CC97F2 /* CharitiesVC.swift in Sources */,
 				942A7AA325D6412B00CC97F2 /* UIButton+.swift in Sources */,
+				94E05D0A25D79C670093D628 /* CharityPaymentViewModel.swift in Sources */,
+				942A7B4D25D695EE00CC97F2 /* CharityModel.swift in Sources */,
 				942A7AA525D6412B00CC97F2 /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +620,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B5E7EC25D838D400663ACA /* CharityTest.swift in Sources */,
+				94B5E7F125D83A3E00663ACA /* CharityPaymentTest.swift in Sources */,
 				942A7A2E25D63F8100CC97F2 /* TamboonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

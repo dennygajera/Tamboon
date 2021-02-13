@@ -3,123 +3,112 @@
 //
 
 import UIKit
-import RxAlamofire
-import RxSwift
-import RxCocoa
+import Alamofire
 import Reachability
 
 enum API : String {
-    static let BaseURL = "http://127.0.0.1:8080/"
-    
+    static let baseURL = "http://127.0.0.1:8080/"
+    case omiseGenerateToken = "https://vault.omise.co/tokens"
     case charities = "charities"
     case donation = "donations"
-    
     var URL : String {
         get{
-            return API.BaseURL + self.rawValue
+            return API.baseURL + self.rawValue
         }
     }
 }
 
+enum HttpMethod {
+    case get
+    case post
+}
+
 class ServiceManager: NSObject {
-    let disposeBag = DisposeBag()
-    static let sharedInstance : ServiceManager = {
+    
+    static let shared : ServiceManager = {
         let instance = ServiceManager()
         return instance
     }()
     
-    func postRequest(parameterDict: [String: Any], URL aUrl: String, isLoader: Bool = true, isSuccessAlert: Bool = false, isFailureAlert: Bool = true, block: @escaping (NSDictionary?, NSError?) -> Void) {
-            print("URL: \(aUrl)")
-            print("Param: \(parameterDict)")
-
-            if Reachability.Connection.self != .none {
-                if isLoader {
-                    LoadingView.startLoading()
-                }
-                var header: [String: String]?
-                header = ["Content-Type": "application/x-www-form-urlencoded"]
-               
-                RxAlamofire.requestJSON(.post,aUrl, parameters: parameterDict, headers:header)
-                    .debug()
-                    .subscribe(onNext: { (r, json) in
-                        do {
-                            if isLoader {
-                                LoadingView.stopLoading()
-                            }
-                            if r.statusCode == 200 {
-                                let dicData = json as! NSDictionary
-                                print("response:\(dicData)")
-                                if let error = dicData.value(forKey: "errors") as? NSArray {
-                                    if error.count > 0 {
-                                        let msg = (error.firstObject as! NSDictionary).value(forKey: "msg") as! String
-                                        SnackBar.show(strMessage: msg, type: .negative)
-                                    }
-                                } else {
-                                    let status: Bool = dicData.value(forKey: "status") as! Bool
-                                    if status {
-                                        if isSuccessAlert {
-                                            if dicData.value(forKey: "msg") != nil {
-                                                SnackBar.show(strMessage: dicData.value(forKey: "msg") as! String, type: .positive)
-                                            }
-                                        }
-                                        block(dicData, nil)
-                                    } else {
-                                        if isFailureAlert {
-                                            SnackBar.show(strMessage: dicData.value(forKey: "msg") as! String, type: .negative)
-                                        } else {
-                                            block(nil, nil)
-                                        }
-                                    }
-                                }
-                            } else if r.statusCode == 404 {
-                                
-                            } else if r.statusCode == 403 || r.statusCode == 401 {
-                                
-                            } else if r.statusCode == 500 {
-                                
-                            }
-                        }
-                    }, onError: {(error) in
-                        LoadingView.stopLoading()
-                        SnackBar.show(strMessage: error.localizedDescription, type: .negative)
-                    })
-                    .disposed(by: disposeBag)
-            }
-        }
-    
-    func getRequest(parameterDict:[String : Any], URL aUrl: String, isLoader: Bool = true, isSuccessAlert: Bool = true , isFailureAlert: Bool = true, block: @escaping (NSDictionary?, NSError?) -> Void) {
+    func request(httpMethod: HttpMethod, parameterDict:[String : Any]?, URL aUrl: String, isLoader: Bool = true, isSuccessAlert: Bool = true , isFailureAlert: Bool = true, block: @escaping (NSDictionary?, NSError?) -> Void) {
         if Reachability.Connection.self != .none {
+            if isLoader {
+                LoadingView.startLoading()
+            }
              print("URL: \(aUrl)")
-             print("Param: \(parameterDict)")
-            if Reachability.Connection.self != .none {
-                if isLoader {
-                    LoadingView.startLoading()
-                }
-                RxAlamofire.requestJSON(.get,aUrl, headers:nil)
-                    .debug()
-                    .subscribe(onNext: { (r, json) in
-                        do {
+            print("Param: \(parameterDict ?? [:])")
+            
+            // HEADER
+            var header: [String: String]?
+            var user = ""
+            var password = ""
+            if aUrl == API.omiseGenerateToken.rawValue {
+                user = OmiseKeys.publicKey
+                password = OmiseKeys.publicKey
+            } else {
+                header = ["Content-Type": "application/json"]
+            }
+            if user != "" {
+                let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+                let base64Credentials = credentialData.base64EncodedString(options: [])
+                    header = ["Authorization": "Basic \(base64Credentials)"]
+            }
+            
+            // ENCODING
+            let encoding: ParameterEncoding?
+            if aUrl == API.omiseGenerateToken.rawValue {
+                encoding = URLEncoding.default
+            } else {
+                encoding = JSONEncoding.default
+            }
+            
+            // REQUEST
+            Alamofire.request(aUrl, method: httpMethod == HttpMethod.get ? .get : .post , parameters: parameterDict == nil ? nil : parameterDict!, encoding: encoding!, headers: header).responseJSON {
+                response in
+                switch response.result {
+                case .success:
+                    do {
+                        if isLoader {
                             LoadingView.stopLoading()
-                            if r.statusCode == 200 {
-                                let dicData = json as! NSDictionary
-                                block(dicData, nil)
-                            } else if r.statusCode == 404 {
-                                
-                            } else if r.statusCode == 403 || r.statusCode == 401 {
-                                
-                            } else if r.statusCode == 500 {
-                                
-                            } else {
-                                
-                            }
                         }
-                    }, onError: {(error) in
-                        LoadingView.stopLoading()
-                    })
-                    .disposed(by: disposeBag)
+                        let statusCode = response.response?.statusCode
+                        if statusCode == 200 {
+                          if let result = response.result.value {
+                               print(result)
+                            if result is NSArray {
+                                block((["data": result] as NSDictionary), nil)
+                            } else {
+                                block((["data": result] as NSDictionary), nil)
+                            }
+                          }
+                        } else if statusCode == 400 {
+                            let result = response.result.value as! NSDictionary
+                            let object = (result.value(forKey: "object") as? String) ?? ""
+                            let errMsg = (result.value(forKey: "message") as? String)
+                            if object == "error" {
+                                SnackBar.show(strMessage: errMsg!, type: .negative)
+                            }
+                            block(nil, nil)
+                        } else if statusCode == 404 {
+                            
+                        } else if statusCode == 403 || statusCode == 401 {
+                            
+                        } else if statusCode == 500 {
+                            
+                        }
+                    }
+                    break
+                case .failure(let error):
+                    print("Error : ",error)
+                    block(nil, nil)
+                    if isLoader {
+                     LoadingView.stopLoading()
+                    }
+                }
             }
         }
     }
+    
 }
 
 extension URL {
