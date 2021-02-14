@@ -7,10 +7,6 @@ target 'Tamboon' do
   # Pods for Tamboon
 
     pod 'RxAlamofire'
-    pod 'RxSwift',    '~> 4.0', :inhibit_warnings => true
-    pod 'RxCocoa',    '~> 4.0', :inhibit_warnings => true
-    pod 'IQKeyboardManagerSwift', :inhibit_warnings => true
-    pod 'ReachabilitySwift', :inhibit_warnings => true
     pod 'MBProgressHUD', '~> 1.1.0', :inhibit_warnings => true
     pod 'SDWebImage', :inhibit_warnings => true
     pod 'MFCard', :inhibit_warnings => true

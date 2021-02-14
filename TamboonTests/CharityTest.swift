@@ -9,11 +9,7 @@ import XCTest
 @testable import Tamboon
 class CharityTest: XCTestCase {
     var objCharitiesViewModel = CharitiesViewModel()
-    
-    override func setUp() {
-        
-    }
-    
+
     func testCharitesAPI() {
         let completedExpectation: XCTestExpectation = expectation(description: "Get all charities data")
         self.objCharitiesViewModel.apiGetAllCharity { (isSuccess) in

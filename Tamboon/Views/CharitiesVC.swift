@@ -11,9 +11,20 @@ class CharitiesVC: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     
     var objCharitiesViewModel = CharitiesViewModel()
+    
+// MARK: View's Function
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Charities"
+        navigationController?.navigationBar.barTintColor = Color.AppColorCode.color()
+        navigationController?.navigationBar.tintColor = .white
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont(name: "Helvetica Neue Medium", size: 18)!
+        ]
+        navigationController?.navigationBar.titleTextAttributes = attrs
+        navigationItem.backButtonTitle = ""
+
         self.apiCall()
         self.tblView.tableFooterView = UIView() // To remove seperators when loading
     }
@@ -29,6 +40,7 @@ class CharitiesVC: UIViewController {
     }
 }
     
+// MARK: Tableview Delegates
 extension CharitiesVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

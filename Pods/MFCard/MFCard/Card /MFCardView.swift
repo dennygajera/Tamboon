@@ -417,7 +417,7 @@ extension MFCardDelegate{
         let currentMonth = components.month
         
         let cardNumber :String = (card?.number)!
-        if cardNumber.count <= 13 {
+        if cardNumber.count != 16 {
             error = "Please enter valid card number"
         } else if card?.month?.rawValue == "MM" {
             error = "Please Select Expiry Month"
@@ -447,17 +447,23 @@ extension MFCardDelegate{
                 self.delegate?.cardDidClose()
             }
         } else {
-            var card = Card(holderName: txtCardName.text, number: getCardNumber(), month: Month(rawValue: viewExpiryMonth!.labelValue.text!)!, year: viewExpiryYear!.labelValue.text!, cvc: txtCvc.text!, paymentType: Card.PaymentType.card, cardType:addedCardType!, userId: 1)
-            
-            let results = self.validationCard(card: card)
-            if results.0 == false && toast == true {
-                UIApplication.topViewController()?.view.makeToast(error!)
-            }
-            if self.delegate != nil{
-                self.delegate?.cardDoneButtonClicked(card, error: error)
-            }
-            if flipOnDone == true{
-                flip(nil)
+            if Month(rawValue: viewExpiryMonth!.labelValue.text!) == nil {
+                UIApplication.topViewController()?.view.makeToast("Please select month")
+            } else  if viewExpiryYear!.labelValue.text == nil {
+                UIApplication.topViewController()?.view.makeToast("Please select year")
+            } else {
+                var card = Card(holderName: txtCardName.text, number: getCardNumber(), month: Month(rawValue: viewExpiryMonth!.labelValue.text!)!, year: viewExpiryYear!.labelValue.text!, cvc: txtCvc.text!, paymentType: Card.PaymentType.card, cardType:addedCardType!, userId: 1)
+                
+                let results = self.validationCard(card: card)
+                if results.0 == false && toast == true {
+                    UIApplication.topViewController()?.view.makeToast(error!)
+                }
+                if self.delegate != nil{
+                    self.delegate?.cardDoneButtonClicked(card, error: error)
+                }
+                if flipOnDone == true{
+                    flip(nil)
+                }
             }
         }
 //        if autoDismiss == true && (error == "" || error == nil){

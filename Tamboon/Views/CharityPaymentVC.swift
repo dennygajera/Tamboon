@@ -9,22 +9,31 @@ import UIKit
 import MFCard
 
 class CharityPaymentVC: UIViewController {
-    @IBOutlet weak var txtAmount: UITextField!
+    // Outlets
+    @IBOutlet weak var txtAmount: UITextField! {
+        didSet { txtAmount?.addDoneCancelToolbar() }
+    }
     @IBOutlet var cardView: MFCardView!
+    
+    // Global Variables
     var viewModel = CharityPaymentViewModel()
     var selectedCharity: Charity?
+    
+    // MARK: View's Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = selectedCharity?.name ?? "Charity"
         cardView.delegate = self
         cardView.toast = true
+        self.txtAmount.setPadding(left: 10, right: 10)
     }
     
+    // MARK: ALL Functionalities
     func generateCardToken(_ card: Card!) {
-        if self.txtAmount.text!.count <= 0 || self.txtAmount!.text == "0" {
+        if self.txtAmount.text!.removeSpecialChars().count <= 0 || self.txtAmount!.text!.removeSpecialChars() == "0" {
             self.presentAlertWithTitle(presentStyle: .alert, title: GlobalConstants.Error, message: ErrorMesssages.emptyAmount, options: "Ok") { (index) in
             }
-        } else if Float(self.txtAmount.text!)! < 20 {
+        } else if Float(self.txtAmount.text!.removeSpecialChars())! < 20 {
             self.presentAlertWithTitle(presentStyle: .alert, title: GlobalConstants.Error, message: ErrorMesssages.lessAmount, options: "Ok") { (index) in
             }
         } else {
@@ -45,7 +54,7 @@ class CharityPaymentVC: UIViewController {
     
     func generateCharge(_ tokenId: String!,_ doner_name: String) {
         let dicParam = ["name": doner_name,
-                        "amount":Int(Float(self.txtAmount.text!)! * 1000),
+                        "amount":Int(Float(self.txtAmount.text!.removeSpecialChars())! * 1000),
                         "token":tokenId!] as [String : Any]
         
         self.viewModel.apiCreateCharge(dicParam: dicParam) { (isSuccess) in
@@ -57,8 +66,19 @@ class CharityPaymentVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func txtAmountTextChange(_ sender: Any) {
+        if (self.txtAmount.text?.removeSpecialChars().count)! > 0 {
+            self.txtAmount.text = "฿ \(self.txtAmount.text?.removeSpecialChars() ?? "")"
+        } else {
+            self.txtAmount.text = ""
+        }
+        
+    }
+    
 }
 
+// MARK: Card Form Delegates
 extension CharityPaymentVC: MFCardDelegate {
     func cardTypeDidIdentify(_ cardType: String) {
         

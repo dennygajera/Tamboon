@@ -13,7 +13,6 @@
 		942A7A1E25D63F7E00CC97F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942A7A1C25D63F7E00CC97F2 /* Main.storyboard */; };
 		942A7A2025D63F8100CC97F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942A7A1F25D63F8100CC97F2 /* Assets.xcassets */; };
 		942A7A2325D63F8100CC97F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942A7A2125D63F8100CC97F2 /* LaunchScreen.storyboard */; };
-		942A7A2E25D63F8100CC97F2 /* TamboonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A2D25D63F8100CC97F2 /* TamboonTests.swift */; };
 		942A7A3925D63F8100CC97F2 /* TamboonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A3825D63F8100CC97F2 /* TamboonUITests.swift */; };
 		942A7A9225D6412A00CC97F2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A6025D6412A00CC97F2 /* Constant.swift */; };
 		942A7A9C25D6412A00CC97F2 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A6C25D6412A00CC97F2 /* UITextView+.swift */; };
@@ -33,7 +32,6 @@
 		942A7AB925D6412B00CC97F2 /* heavy_dock11.otf in Resources */ = {isa = PBXBuildFile; fileRef = 942A7A8B25D6412A00CC97F2 /* heavy_dock11.otf */; };
 		942A7ABA25D6412B00CC97F2 /* AppPrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A8C25D6412A00CC97F2 /* AppPrefsManager.swift */; };
 		942A7ABC25D6412B00CC97F2 /* SHSnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7A9025D6412A00CC97F2 /* SHSnackBarView.swift */; };
-		942A7AE625D64F3600CC97F2 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7AE525D64F3600CC97F2 /* Connection.swift */; };
 		942A7B4325D6957100CC97F2 /* CharitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B4225D6957100CC97F2 /* CharitiesVC.swift */; };
 		942A7B4825D6959400CC97F2 /* CharitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B4725D6959400CC97F2 /* CharitiesViewModel.swift */; };
 		942A7B4D25D695EE00CC97F2 /* CharityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7B4C25D695EE00CC97F2 /* CharityModel.swift */; };
@@ -41,6 +39,7 @@
 		942A7BAE25D6A59600CC97F2 /* CharityPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A7BAD25D6A59600CC97F2 /* CharityPaymentVC.swift */; };
 		94B5E7EC25D838D400663ACA /* CharityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5E7EB25D838D400663ACA /* CharityTest.swift */; };
 		94B5E7F125D83A3E00663ACA /* CharityPaymentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5E7F025D83A3E00663ACA /* CharityPaymentTest.swift */; };
+		94B5E85825D97CDA00663ACA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5E85725D97CDA00663ACA /* Reachability.swift */; };
 		94E05D0A25D79C670093D628 /* CharityPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E05CFF25D79BC20093D628 /* CharityPaymentViewModel.swift */; };
 		94E05D2F25D7C8E10093D628 /* CharityPaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E05D2E25D7C8E10093D628 /* CharityPaymentModel.swift */; };
 		94E05D3725D7D5A10093D628 /* TransactionResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E05D3625D7D5A10093D628 /* TransactionResultVC.swift */; };
@@ -80,7 +79,6 @@
 		942A7A2225D63F8100CC97F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		942A7A2425D63F8100CC97F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		942A7A2925D63F8100CC97F2 /* TamboonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamboonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		942A7A2D25D63F8100CC97F2 /* TamboonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamboonTests.swift; sourceTree = "<group>"; };
 		942A7A2F25D63F8100CC97F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		942A7A3425D63F8100CC97F2 /* TamboonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamboonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		942A7A3825D63F8100CC97F2 /* TamboonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamboonUITests.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		942A7A8E25D6412A00CC97F2 /* SHSnackBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSnackBarView.h; sourceTree = "<group>"; };
 		942A7A8F25D6412A00CC97F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		942A7A9025D6412A00CC97F2 /* SHSnackBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSnackBarView.swift; sourceTree = "<group>"; };
-		942A7AE525D64F3600CC97F2 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		942A7B4225D6957100CC97F2 /* CharitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesVC.swift; sourceTree = "<group>"; };
 		942A7B4725D6959400CC97F2 /* CharitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesViewModel.swift; sourceTree = "<group>"; };
 		942A7B4C25D695EE00CC97F2 /* CharityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityModel.swift; sourceTree = "<group>"; };
@@ -113,6 +110,7 @@
 		942A7BAD25D6A59600CC97F2 /* CharityPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentVC.swift; sourceTree = "<group>"; };
 		94B5E7EB25D838D400663ACA /* CharityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTest.swift; sourceTree = "<group>"; };
 		94B5E7F025D83A3E00663ACA /* CharityPaymentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentTest.swift; sourceTree = "<group>"; };
+		94B5E85725D97CDA00663ACA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		94E05CFF25D79BC20093D628 /* CharityPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentViewModel.swift; sourceTree = "<group>"; };
 		94E05D2E25D7C8E10093D628 /* CharityPaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityPaymentModel.swift; sourceTree = "<group>"; };
 		94E05D3625D7D5A10093D628 /* TransactionResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultVC.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 		942A7A2C25D63F8100CC97F2 /* TamboonTests */ = {
 			isa = PBXGroup;
 			children = (
-				942A7A2D25D63F8100CC97F2 /* TamboonTests.swift */,
 				942A7A2F25D63F8100CC97F2 /* Info.plist */,
 				94B5E7EB25D838D400663ACA /* CharityTest.swift */,
 				94B5E7F025D83A3E00663ACA /* CharityPaymentTest.swift */,
@@ -264,10 +261,10 @@
 				942A7A8725D6412A00CC97F2 /* Font */,
 				942A7A6825D6412A00CC97F2 /* Extensions */,
 				942A7A6025D6412A00CC97F2 /* Constant.swift */,
-				942A7AE525D64F3600CC97F2 /* Connection.swift */,
 				942A7A8225D6412A00CC97F2 /* ServiceManager.swift */,
 				942A7A8325D6412A00CC97F2 /* Display+.swift */,
 				942A7A8625D6412A00CC97F2 /* Utility.swift */,
+				94B5E85725D97CDA00663ACA /* Reachability.swift */,
 				942A7A8C25D6412A00CC97F2 /* AppPrefsManager.swift */,
 				942A7A8D25D6412A00CC97F2 /* SHSnackBarView */,
 			);
@@ -589,7 +586,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				942A7AB225D6412B00CC97F2 /* Display+.swift in Sources */,
-				942A7AE625D64F3600CC97F2 /* Connection.swift in Sources */,
 				942A7ABC25D6412B00CC97F2 /* SHSnackBarView.swift in Sources */,
 				942A7AA125D6412B00CC97F2 /* UILabel+.swift in Sources */,
 				942A7A1725D63F7E00CC97F2 /* AppDelegate.swift in Sources */,
@@ -600,6 +596,7 @@
 				94E05D3725D7D5A10093D628 /* TransactionResultVC.swift in Sources */,
 				942A7AB125D6412B00CC97F2 /* ServiceManager.swift in Sources */,
 				94E05D2F25D7C8E10093D628 /* CharityPaymentModel.swift in Sources */,
+				94B5E85825D97CDA00663ACA /* Reachability.swift in Sources */,
 				942A7AB525D6412B00CC97F2 /* Utility.swift in Sources */,
 				942A7ABA25D6412B00CC97F2 /* AppPrefsManager.swift in Sources */,
 				942A7AA825D6412B00CC97F2 /* UIColor+.swift in Sources */,
@@ -622,7 +619,6 @@
 			files = (
 				94B5E7EC25D838D400663ACA /* CharityTest.swift in Sources */,
 				94B5E7F125D83A3E00663ACA /* CharityPaymentTest.swift in Sources */,
-				942A7A2E25D63F8100CC97F2 /* TamboonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

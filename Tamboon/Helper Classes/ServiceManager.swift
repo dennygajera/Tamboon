@@ -4,7 +4,6 @@
 
 import UIKit
 import Alamofire
-import Reachability
 
 enum API : String {
     static let baseURL = "http://127.0.0.1:8080/"
@@ -35,9 +34,10 @@ class ServiceManager: NSObject {
             if isLoader {
                 LoadingView.startLoading()
             }
-             print("URL: \(aUrl)")
-            print("Param: \(parameterDict ?? [:])")
-            
+            #if DEBUG
+                print("URL: \(aUrl)")
+                print("Param: \(parameterDict ?? [:])")
+            #endif
             // HEADER
             var header: [String: String]?
             var user = ""
@@ -74,7 +74,10 @@ class ServiceManager: NSObject {
                         let statusCode = response.response?.statusCode
                         if statusCode == 200 {
                           if let result = response.result.value {
-                               print(result)
+                            #if DEBUG
+                                print(result)
+                            #endif
+                               
                             if result is NSArray {
                                 block((["data": result] as NSDictionary), nil)
                             } else {
@@ -99,7 +102,9 @@ class ServiceManager: NSObject {
                     }
                     break
                 case .failure(let error):
-                    print("Error : ",error)
+                    #if DEBUG
+                        print("Error : ",error)
+                    #endif
                     block(nil, nil)
                     if isLoader {
                      LoadingView.stopLoading()

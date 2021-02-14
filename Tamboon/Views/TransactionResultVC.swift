@@ -10,7 +10,8 @@ import UIKit
 class TransactionResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Success"
+        self.navigationItem.hidesBackButton = true
     }
     
     @IBAction func btnExploreCharityClick(_ sender: Any) {

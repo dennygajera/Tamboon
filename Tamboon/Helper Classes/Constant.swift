@@ -21,7 +21,8 @@ enum Storyboard: String {
 }
 
 enum Color: String {
-    case AppColorCode  = "358AA9"
+    case AppColorCode  = "181C49"
+    case AppSupportCode  = "EB7B3D"
     func color() -> UIColor {
         return UIColor.hexStringToUIColor(hex: self.rawValue)
     }
