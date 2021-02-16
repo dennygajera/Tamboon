@@ -103,7 +103,8 @@ class ServiceManager: NSObject {
                     break
                 case .failure(let error):
                     #if DEBUG
-                        print("Error : ",error)
+                    print("Error : ",error.localizedDescription)
+                    SnackBar.show(strMessage: error.localizedDescription, type: .negative)
                     #endif
                     block(nil, nil)
                     if isLoader {
